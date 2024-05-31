@@ -5,6 +5,18 @@
             http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0" metadata-complete="true">
 
+    <!-- Filter Definition -->
+    <filter>
+        <filter-name>LoggingFilter</filter-name>
+        <filter-class>banking.api.filter.LoggingFilter</filter-class>
+    </filter>
+
+    <!-- Filter Mapping -->
+    <filter-mapping>
+        <filter-name>LoggingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <servlet>
         <servlet-name>CustomerServlet</servlet-name>
         <servlet-class>banking.api.controller.CustomerServlet</servlet-class>
@@ -14,4 +26,5 @@
         <servlet-name>CustomerServlet</servlet-name>
         <url-pattern>/customer</url-pattern>
     </servlet-mapping>
+
 </web-app>

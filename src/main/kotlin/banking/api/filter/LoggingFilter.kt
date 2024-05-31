@@ -11,7 +11,7 @@ class LoggingFilter : Filter {
     override fun doFilter(request: ServletRequest, response: ServletResponse, filterChain: FilterChain) {
 
         // Intercept request
-        println("Received request body: $request")
+        println("Received request body: ${request.parameterMap}")
 
         // Continue with the next filter or servlet
         filterChain.doFilter(request, response);

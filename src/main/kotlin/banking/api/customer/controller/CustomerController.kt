@@ -12,4 +12,8 @@ class CustomerController: CustomerResource{
     override fun registerCustomer(request: CustomerRequest): CustomerResponse {
         return customerService.registerCustomer(request)
     }
+
+    override fun getAllCustomer(): List<CustomerResponse> {
+        return customerService.getAllCustomer()
+    }
 }

@@ -22,5 +22,6 @@ fun CustomerRequest.Address.toAddressEntity() =
         street = street,
         city = city,
         state = state,
-        zip = zip
+        zip = zip,
+        country = country
     )

@@ -6,13 +6,14 @@ data class CustomerRequest(
     val email: String,
     val phone: String,
     val addresses: List<Address>,
-    val dateOfBirth: String
+    val dateOfBirth: String,
 ){
     data class Address(
         val type: AddressType,
         val street: String,
         val city: String,
         val state: String,
-        val zip: String
+        val zip: String,
+        val country: String,
     )
 }

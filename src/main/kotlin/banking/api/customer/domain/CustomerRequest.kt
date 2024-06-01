@@ -7,6 +7,7 @@ data class CustomerRequest(
     val phone: String,
     val addresses: List<Address>,
     val dateOfBirth: String,
+    val createdAt: Long?
 ){
     data class Address(
         val type: AddressType,

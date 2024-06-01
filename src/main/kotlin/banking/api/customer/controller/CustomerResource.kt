@@ -24,7 +24,7 @@ interface CustomerResource {
     fun registerCustomer(@RequestBody request: CustomerRequest): CustomerResponse
 
 
-    @GetMapping()
+    @GetMapping
     @ResponseStatus(OK)
     @ResponseBody
     fun getAllCustomer(): List<CustomerResponse>

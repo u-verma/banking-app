@@ -11,11 +11,11 @@ fun generateStringUUID() = UUID.randomUUID().toString()
 
 val clock = Clock.systemUTC()
 
-fun now() = ZonedDateTime.now(clock)
+fun now(): ZonedDateTime = ZonedDateTime.now(clock)
 
 fun Long.toZoneDateTimeFromMilli(): ZonedDateTime = ZonedDateTime.ofInstant(ofEpochMilli(this), clock.zone)
 
-fun String.toLocalDate() = LocalDate.parse(this, DateTimeFormatter.ofPattern("dd-MM-yyyy"))
+fun String.toLocalDate(): LocalDate = LocalDate.parse(this, DateTimeFormatter.ofPattern("dd-MM-yyyy"))
 
 /*
 fun toZoneDateTimeFromMilli(epochTime: Long): ZonedDateTime {

@@ -12,6 +12,7 @@ data class AddressEntity(
     val city: String,
     val state: String,
     val zip: String,
+    val country: String,
     val createdAt: ZonedDateTime = now(),
     val modifyAt: ZonedDateTime = now(),
 )

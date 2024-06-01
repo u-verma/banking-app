@@ -4,6 +4,7 @@ import banking.api.customer.controller.CustomerResource.Companion.CUSTOMER_ENDPO
 import banking.api.customer.domain.CustomerRequest
 import banking.api.customer.domain.CustomerResponse
 import org.springframework.http.HttpStatus.OK
+import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
@@ -21,4 +22,10 @@ interface CustomerResource {
     @ResponseStatus(OK)
     @ResponseBody
     fun registerCustomer(@RequestBody request: CustomerRequest): CustomerResponse
+
+
+    @GetMapping
+    @ResponseStatus(OK)
+    @ResponseBody
+    fun getAllCustomer(): List<CustomerResponse>
 }

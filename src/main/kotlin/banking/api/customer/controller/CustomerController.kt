@@ -9,7 +9,12 @@ import org.springframework.web.bind.annotation.RestController
 class CustomerController: CustomerResource{
 
     val customerService = CustomerService()
+
     override fun registerCustomer(request: CustomerRequest): CustomerResponse {
         return customerService.registerCustomer(request)
+    }
+
+    override fun getAllCustomer(): List<CustomerResponse> {
+        return customerService.getAllCustomer()
     }
 }

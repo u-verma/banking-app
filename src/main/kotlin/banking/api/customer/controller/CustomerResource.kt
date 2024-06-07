@@ -17,7 +17,7 @@ interface CustomerResource {
         const val CUSTOMER_ENDPOINT = "/api/v1/customer"
     }
 
-    @PostMapping("/register")
+    @PostMapping("/register", consumes = ["application/json"], produces = ["application/json"])
     @ResponseStatus(OK)
     @ResponseBody
     fun registerCustomer(@RequestBody request: CustomerRequest): CustomerResponse

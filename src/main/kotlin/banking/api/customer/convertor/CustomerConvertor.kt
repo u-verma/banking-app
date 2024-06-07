@@ -5,14 +5,15 @@ import banking.api.customer.persitence.entity.AddressEntity
 import banking.api.customer.persitence.entity.CustomerEntity
 import banking.util.toLocalDate
 
-fun CustomerRequest.toCustomerEntity() : CustomerEntity {
-   return CustomerEntity(
+
+fun CustomerRequest.toCustomerEntity(): CustomerEntity {
+    return CustomerEntity(
         firstName = firstName,
         lastName = lastName,
         email = email,
         phone = phone,
         dateOfBirth = dateOfBirth.toLocalDate(),
-        addresses = addresses.map { it.toAddressEntity() }
+        addresses = addresses.map { address -> address.toAddressEntity() }
     )
 }
 

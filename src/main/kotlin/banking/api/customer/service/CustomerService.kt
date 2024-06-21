@@ -21,6 +21,8 @@ class CustomerService {
 
         return CustomerResponse(
             id = customerEntity.id,
+            firstName = customerEntity.firstName,
+            lastName = customerEntity.lastName,
             email = customerEntity.email,
         )
     }
@@ -29,6 +31,8 @@ class CustomerService {
         return customerRepository.findAll().map {
             CustomerResponse(
                 id = it.id,
+                firstName = it.firstName,
+                lastName = it.lastName,
                 email = it.email,
             )
         }

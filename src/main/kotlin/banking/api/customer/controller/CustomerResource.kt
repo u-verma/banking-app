@@ -4,6 +4,7 @@ import banking.api.customer.controller.CustomerResource.Companion.CUSTOMER_ENDPO
 import banking.api.customer.domain.CustomerRequest
 import banking.api.customer.domain.CustomerResponse
 import org.springframework.http.HttpStatus.OK
+import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody
 import org.springframework.web.bind.annotation.ResponseStatus
 
 @RequestMapping(CUSTOMER_ENDPOINT)
+@CrossOrigin(origins = ["http://localhost:5173"])
 interface CustomerResource {
 
     companion object {

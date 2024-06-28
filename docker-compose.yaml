@@ -1,0 +1,11 @@
+version: '3'
+services:
+  banking-app-postgresql:
+    container_name: "banking-app-db"
+    image: library/postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: banking-app-db
+    ports:
+      - "15470:5432"

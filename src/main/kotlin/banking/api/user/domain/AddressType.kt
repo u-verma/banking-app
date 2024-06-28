@@ -1,4 +1,4 @@
-package banking.api.customer.domain
+package banking.api.user.domain
 
 enum class AddressType {
     HOME,

@@ -1,3 +1,46 @@
 server:
     port: 8080
     shutdown: graceful
+
+spring:
+    application:
+        name: banking-app
+    main:
+        banner-mode: off
+        allow-bean-definition-overriding: true
+    datasource:
+        url: "jdbc:postgresql://localhost:15470/banking-app-db"
+        username: "postgres"
+        password: "postgres"
+        driver-class-name: org.postgresql.Driver
+        tomcat:
+            max-idle: 2
+            max-active: 10
+            test-on-borrow: true
+            connection-properties: stringtype=unspecified
+        hikari:
+            minimum-idle: 2
+            maximum-pool-size: 10
+            data-source-properties:
+                stringtype: unspecified
+    jpa:
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+        generate-ddl: false
+        show-sql: false
+    flyway:
+        enabled: true
+        table: banking_app_versions
+    mvc:
+        dispatch-options-request: true
+    jackson:
+        property-naming-strategy: SNAKE_CASE
+        deserialization:
+            fail-on-unknown-properties: false
+            read-enums-using-to-string: true
+        serialization:
+            write-dates-as-timestamps: false
+            write-enums-using-to-string: true
+        mapper:
+            accept-case-insensitive-enums: true
+    request:
+        max-age: 3600
